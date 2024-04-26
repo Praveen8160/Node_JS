@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+  *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            height: 100vh;
+            width: 100vw;
+            background-color: rgb(137, 136, 136);
+        }
+        h1{
+            height: 5vh;
+            background-color: rgb(48, 48, 48);
+            text-align: center;
+            color: rgb(214, 208, 208);
+            line-height: 5vh; /* Add line-height for vertical centering */
+        }
+        .main{
+            min-height: 90vh; /* Changed min-height */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .box{
+            width: 80%; /* Adjusted width */
+            max-width: 400px; /* Added max-width */
+            background-color: rgb(68, 68, 65);
+            border-radius: 20px;
+            color: rgb(214, 208, 208);
+            padding: 20px; /* Added padding */
+        }
+        .box form{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-bottom: 20px; /* Adjusted margin */
+            font-size: 25px;
+            font-weight: 700;
+        }
+        label{
+            margin-bottom: 10px; /* Adjusted margin */
+        }
+        input{
+            height: 30px;
+            width: 100%; /* Changed width */
+            margin-bottom: 10px; /* Adjusted margin */
+            border-radius: 20px;
+            border: none;
+            padding: 5px; /* Added padding */
+        }
+        input::placeholder{
+           text-align: center;
+           color: black;
+           font-size: 15px;
+        }
+        .inputs{
+            width: 100%; /* Changed width */
+            margin-bottom: 20px; /* Adjusted margin */
+        }
+        button{
+            height: 40px; /* Adjusted height */
+            width: 100%; /* Changed width */
+            font-size: 20px;
+            font-weight: 700;
+            color: rgb(214, 208, 208);
+            background-color: rgb(48, 48, 48);
+            border-radius: 20px;
+        }
+        button:hover{
+            color: rgb(255, 255, 255);
+        }
+        a{
+            text-decoration: none;
+            color: aliceblue;
+        }
+
+        /* Media Queries */
+        @media screen and (max-width: 600px) {
+            .box {
+                width: 90%; /* Adjust width for smaller screens */
+            }
+        }
+</style>
+<body>
+    <h1>Sign UP</h1>
+    <div class="main">
+        <div class="box">
+            <form method="post" action="/user">
+                <div class="inputs">
+                    <label>Name:</label>
+                    <input type="text" name="name" id="" placeholder="john">
+                </div>
+                <div class="inputs">
+                    <label>Email:</label>
+                    <input type="email" name="email" id="" placeholder="john@gmail.com">
+                </div>
+                <div class="inputs">
+                    <label>Password:</label>
+                    <input type="text" name="password" id="" placeholder="******">
+                </div>
+                <div class="inputs">
+                    <a href="/signin">already user?</a>
+                </div>
+
+                <button type="submit" class="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

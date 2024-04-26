@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(137, 136, 136);
+}
+
+h1 {
+    height: 5vh;
+    background-color: rgb(48, 48, 48);
+    text-align: center;
+    color: rgb(214, 208, 208);
+    margin: 0;
+    line-height: 5vh;
+}
+
+.main {
+    min-height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box {
+    max-width: 90%;
+    background-color: rgb(68, 68, 65);
+    border-radius: 20px;
+    color: rgb(214, 208, 208);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.box form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+label {
+    margin-bottom: 10px;
+}
+
+input {
+    height: 30px;
+    width: 100%;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    border: none;
+}
+
+input::placeholder {
+    text-align: center;
+    color: black;
+    font-size: 15px;
+}
+
+button {
+    height: 40px;
+    width: 100%;
+    font-size: 20px;
+    font-weight: 700;
+    color: rgb(214, 208, 208);
+    background-color: rgb(48, 48, 48);
+    border-radius: 20px;
+}
+
+button:hover {
+    color: rgb(255, 255, 255);
+}
+
+@media screen and (min-width: 768px) {
+    .box {
+        max-width: 50%;
+    }
+}
+</style>
+<body>
+    <h1>Sign UP</h1>
+    <div class="main">
+        <div class="box">
+            <form method="post" action="/user/signin">
+                <div class="inputs">
+                    <label>Email:</label>
+                    <input type="email" name="email" id="" placeholder="john@gmail.com">
+                </div>
+                <div class="inputs">
+                    <label>Password:</label>
+                    <input type="text" name="password" id="" placeholder="******">
+                </div>
+                <button type="submit" class="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

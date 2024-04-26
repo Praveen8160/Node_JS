@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin-top: 5px;
+        padding-top: 0px;
+    }
+    body{
+        height: 100vh;
+        width: 100vw;
+        background-color: rgb(137, 136, 136);
+        box-sizing: border-box;
+    }
+    h1{
+        height: 5vh;
+        background-color: rgb(48, 48, 48);
+        text-align: center;
+        color: rgb(214, 208, 208);
+    }
+    .main{
+        min-height: 50vh;
+        min-width: 100vw;
+        background-color: rgb(48, 48, 48);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .box{
+        height: 35vh;
+        width: 25vw;
+        background-color: rgb(68, 68, 65);
+        border-radius: 20px;
+        color: rgb(214, 208, 208);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .box form{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin: 50px 0px;
+        font-size: 25px;
+        font-weight: 700;
+    }
+    label{
+        margin-bottom: 20px;
+    }
+    input{
+        height: 25px;
+        width: 17vw;
+        margin-bottom: 20px;
+    }
+    input::placeholder{
+       text-align: center;
+       color: black;
+       font-size: 15px;
+    }
+    button .submit{
+        height: 5vh;
+        width: 10vw;
+        font-size: 20px;
+        font-weight: 700;
+        color: rgb(214, 208, 208);
+        background-color: rgb(48, 48, 48);
+        border-radius: 20px;
+    }
+    button:hover{
+        color: rgb(255, 255, 255);
+    }
+    p{
+        font-size: 20px;
+        font-weight: 700;
+    }
+    .main table{
+        color: aliceblue;
+        height: 35vh;
+        width: 25vw;
+        border-radius: 10px;
+    }
+</style>
+<body>
+    <h1>URl SHORTNER</h1>
+    <div class="main">
+        <div class="box">
+            <form method="post" action="/url">
+                <label>Enter your Original Url</label>
+                <input type="text" name="url" id="" placeholder="http://youtube.com">
+                <button type="submit" class="submit">Generate</button>
+            </form>
+            <% if (locals.id) {%>
+            <p>URL Generated</p>
+            <p>http://localhost:9000/url/<%= locals.id %></p>
+            <%}%>
+        </div>
+    </div>
+    <div class="main">
+        <% if (locals.URL) {%>
+            <table border="2">
+                <thead>
+                    <th>S.No</th>
+                    <th>ShortID</th>
+                    <th>Redirect</th>
+                    <th>Clicks</th>
+                    <th>Delete</th>
+                </thead>
+                <tbody>
+                    <% URL.forEach((url,index) => { %>
+                    <tr>
+                        <td><%= index+1 %></td>
+                        <td><%= url.ShortId %></td>
+                        <td><%= url.redirecturl %></td>
+                        <td><%= url.visitHistory.length %></td>
+                        <th><a href="/url/delete/<%= url._id %>">Delete</a></th>
+                    </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        <% } %>  
+    </div>
+</body>
+</html>
